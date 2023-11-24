@@ -1,0 +1,22 @@
+{
+    "name": "php-script/fast-cache",
+    "description": "Fast Cache is a PHP simple and super fast caching system which make PHP Application faster",
+	"license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpScript\\FastCache\\": "src/"
+        },
+		"files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Shahin Moyshan",
+            "email": "freelance.shain@gmail.com"
+        }
+    ],
+    "require": {
+		"php": ">=7.4"
+	}
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpScript\FastCache\Exceptions;
+namespace VulcanPhp\FastCache\Exceptions;
 
 use Exception;
 

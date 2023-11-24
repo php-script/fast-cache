@@ -1,9 +1,9 @@
 <?php
 
-namespace PhpScript\FastCache\Engine\SimpleCache;
+namespace VulcanPhp\FastCache\Engine\SimpleCache;
 
-use PhpScript\FastCache\Exceptions\SimpleCacheException;
-use PhpScript\FastCache\Interfaces\ICacheHandler;
+use VulcanPhp\FastCache\Exceptions\SimpleCacheException;
+use VulcanPhp\FastCache\Interfaces\ICacheHandler;
 
 class SimpleCacheHandler implements ICacheHandler
 {

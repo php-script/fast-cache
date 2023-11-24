@@ -6,7 +6,7 @@ Fast Cache is a PHP simple and super fast caching system which make PHP Applicat
 It's recommended that you use [Composer](https://getcomposer.org/) to install Fast Cache
 
 ```bash
-$ composer require phpscript/fastcache
+$ composer require vulcanphp/fastcache
 ```
 
 ## Fast Cache Usage

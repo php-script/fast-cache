@@ -1,9 +1,9 @@
 <?php
 
-namespace PhpScript\FastCache\Engine\SimpleCache;
+namespace VulcanPhp\FastCache\Engine\SimpleCache;
 
-use PhpScript\FastCache\Interfaces\ICacheHandler;
-use PhpScript\FastCache\Interfaces\IEngine;
+use VulcanPhp\FastCache\Interfaces\ICacheHandler;
+use VulcanPhp\FastCache\Interfaces\IEngine;
 
 class SimpleCache implements IEngine
 {

@@ -1,14 +1,14 @@
 <?php
 
-use PhpScript\FastCache\Cache;
-use PhpScript\FastCache\Drivers\FastCacheDriver;
-use PhpScript\FastCache\Engine\SimpleCache\SimpleCacheHandler;
-use PhpScript\FastCache\Interfaces\ICache;
-use PhpScript\FastCache\Interfaces\ICacheDriver;
-use PhpScript\FastCache\Interfaces\ICacheHandler;
-use PhpScript\FastCache\Interfaces\IEngine;
-use PhpScript\FastCache\Interfaces\ISiteCache;
-use PhpScript\FastCache\SiteCache;
+use VulcanPhp\FastCache\Cache;
+use VulcanPhp\FastCache\Drivers\FastCacheDriver;
+use VulcanPhp\FastCache\Engine\SimpleCache\SimpleCacheHandler;
+use VulcanPhp\FastCache\Interfaces\ICache;
+use VulcanPhp\FastCache\Interfaces\ICacheDriver;
+use VulcanPhp\FastCache\Interfaces\ICacheHandler;
+use VulcanPhp\FastCache\Interfaces\IEngine;
+use VulcanPhp\FastCache\Interfaces\ISiteCache;
+use VulcanPhp\FastCache\SiteCache;
 
 if (!function_exists('cache_init')) {
     function cache_init($cacheConfig = []): ICache

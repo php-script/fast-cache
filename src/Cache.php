@@ -1,11 +1,11 @@
 <?php
 
-namespace PhpScript\FastCache;
+namespace VulcanPhp\FastCache;
 
-use PhpScript\FastCache\Drivers\FastCacheDriver;
-use PhpScript\FastCache\Interfaces\ICache;
-use PhpScript\FastCache\Interfaces\ICacheDriver;
-use PhpScript\FastCache\Interfaces\ICacheHandler;
+use VulcanPhp\FastCache\Drivers\FastCacheDriver;
+use VulcanPhp\FastCache\Interfaces\ICache;
+use VulcanPhp\FastCache\Interfaces\ICacheDriver;
+use VulcanPhp\FastCache\Interfaces\ICacheHandler;
 
 class Cache implements ICache
 {

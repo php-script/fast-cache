@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpScript\FastCache;
+namespace VulcanPhp\FastCache;
 
-use PhpScript\FastCache\Interfaces\ISiteCache;
+use VulcanPhp\FastCache\Interfaces\ISiteCache;
 
 class SiteCache implements ISiteCache
 {
@@ -318,7 +318,7 @@ class SiteCache implements ISiteCache
 <!-- Served At: %s -->
 <!-- Last-Modified: %s -->
 <!-- Expires: %s -->
-<!-- Learn More: https://github.com/phpscript/fastcache  -->
+<!-- Learn More: https://github.com/vulcanphp/fastcache  -->
 
 ",
             gmdate("D, d M Y H:i:s", time()) . " GMT",

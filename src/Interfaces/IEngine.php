@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpScript\FastCache\Interfaces;
+namespace VulcanPhp\FastCache\Interfaces;
 
 interface IEngine
 {

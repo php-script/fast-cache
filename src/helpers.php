@@ -59,16 +59,9 @@ if (!function_exists('init_site_cache')) {
     }
 }
 
-if (!function_exists('start_site_cache')) {
-    function start_site_cache(): void
+if (!function_exists('serve_site_cache')) {
+    function serve_site_cache(): void
     {
         SiteCache::$instance->serve();
-    }
-}
-
-if (!function_exists('end_site_cache')) {
-    function end_site_cache(): void
-    {
-        SiteCache::$instance->end();
     }
 }

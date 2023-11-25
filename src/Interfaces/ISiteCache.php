@@ -9,6 +9,4 @@ interface ISiteCache
     public function clean(): void;
 
     public function flush(): void;
-
-    public function end(): void;
 }

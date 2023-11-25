@@ -136,8 +136,8 @@ init_site_cache([
     // Available Condition is equal and not equal, Example: session.user (is equal to) and !session.user (is not equal to)
 ]);
 
-// start site cache (required)
-start_site_cache();
+// serve from site cache if exists (required)
+serve_site_cache();
 
 // your application codes <START>
 
@@ -150,9 +150,6 @@ $app->run();
 echo $app->response()->getBody();
 
 // your application codes <END>
-
-// end the site cache (required)
-end_site_cache();
 
 exit;
 

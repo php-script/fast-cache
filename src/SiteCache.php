@@ -2,6 +2,7 @@
 
 namespace VulcanPhp\FastCache;
 
+use VulcanPhp\FastCache\Exceptions\SimpleCacheException;
 use VulcanPhp\FastCache\Interfaces\ISiteCache;
 
 class SiteCache implements ISiteCache
@@ -9,7 +10,7 @@ class SiteCache implements ISiteCache
     public static SiteCache $instance;
 
     protected array $config, $when;
-    protected bool $valid;
+    protected bool $valid, $ob_started;
 
     public function __construct(array $config = [], array $when = [])
     {
@@ -65,19 +66,29 @@ class SiteCache implements ISiteCache
             }
 
             // start ob and cache output
+            $this->ob_started = true;
             ob_start();
         }
     }
 
-    public function end(): void
+    public function __destruct()
     {
-        if ($this->isValid()) {
+        if (($this->ob_started ?? false) === true && $this->isValid()) {
             $output = ob_get_clean();
 
             if ($this->config['minify']) {
                 $output = preg_replace(['/^ {2,}/m', '/^\t{2,}/m', '~[\r\n]+~'], '',  $output);
             }
 
+            // check direcotry
+            $directory = dirname($this->getCacheFile());
+            if ((!is_dir($directory) && !mkdir($directory, 0777, true))
+                || (!is_writable($directory) && !chmod($directory, 0777))
+            ) {
+                throw new SimpleCacheException('Tmp Directory is not accessible');
+            }
+
+            // create cache file
             file_put_contents($this->getCacheFile(), $output);
 
             echo $output;

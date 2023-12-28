@@ -89,7 +89,9 @@ class SiteCache implements ISiteCache
             }
 
             // create cache file
-            file_put_contents($this->getCacheFile(), $output);
+            if (!empty($output)) {
+                file_put_contents($this->getCacheFile(), $output);
+            }
 
             echo $output;
         }
@@ -259,7 +261,7 @@ class SiteCache implements ISiteCache
     protected function getCacheFile(): string
     {
         return $this->getTmpDir()
-            . sha1($this->parsePath($_SERVER['PATH_INFO'] ?? '/'))
+            . sha1($this->parsePath($_SERVER['REQUEST_URI'] ?? '/'))
             . $this->config['extension'];
     }
 
@@ -325,13 +327,14 @@ class SiteCache implements ISiteCache
         $maxAge     = $timestamp - strtotime("-{$this->config['expire']}");
 
         return sprintf(
-            "<!-- Served From: Fast Cache -->
-<!-- Served At: %s -->
-<!-- Last-Modified: %s -->
-<!-- Expires: %s -->
-<!-- Learn More: https://github.com/vulcanphp/fastcache  -->
-
-",
+            <<<EOT
+            <!-- Served From: Fast Cache -->
+            <!-- Served At: %s -->
+            <!-- Last-Modified: %s -->
+            <!-- Expires: %s -->
+            <!-- Learn More: https://github.com/vulcanphp/fastcache  -->
+			
+            EOT,
             gmdate("D, d M Y H:i:s", time()) . " GMT",
             gmdate("D, j M Y H:i:s", $timestamp) . " GMT",
             gmdate("D, d M Y H:i:s", time() + $maxAge) . " GMT",

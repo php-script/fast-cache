@@ -333,7 +333,7 @@ class SiteCache implements ISiteCache
             <!-- Last-Modified: %s -->
             <!-- Expires: %s -->
             <!-- Learn More: https://github.com/vulcanphp/fastcache  -->
-			
+            
             EOT,
             gmdate("D, d M Y H:i:s", time()) . " GMT",
             gmdate("D, j M Y H:i:s", $timestamp) . " GMT",
